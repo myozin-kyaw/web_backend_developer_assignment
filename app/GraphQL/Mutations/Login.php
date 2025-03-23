@@ -23,6 +23,8 @@ final readonly class Login
             ]);
         }
 
+        $user->tokens()->delete();
+
         return $user->createToken('authToken')->accessToken;
     }
 }

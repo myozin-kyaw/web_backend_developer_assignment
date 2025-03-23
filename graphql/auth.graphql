@@ -1,9 +1,10 @@
-extend type Mutation {
-    login(username: String!, password: String!): String!
-}
-
 extend type Query {
     me: User! @guard @auth
+}
+
+input LoginPayload @validator {
+    username: String!
+    password: String!
 }
 
 type User {
@@ -13,4 +14,8 @@ type User {
     email: String!
     created_at: String!
     updated_at: String
+}
+
+extend type Mutation {
+    login(input: LoginPayload @spread): String!
 }
