@@ -1,6 +1,6 @@
 type Query {
-    employees: [Employee!]! @paginate
-    employee(id: ID @eq): Employee @find
+    employees: [Employee!]! @paginate @auth
+    employee(id: ID @eq): Employee @find @auth
 }
 
 input CreateEmployeeInput @validator {
