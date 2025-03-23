@@ -45,4 +45,6 @@ type Mutation {
     deleteEmployee(id: ID! @eq): Employee @guard(with: ["api"]) @delete
 
     exportEmployeesExcel: String @guard(with: ["api"])
+
+    importEmployeesExcel(file: Upload! @rules(apply: ["mimeTypes:xlsx"]): String! @guard(with: ["auth:api"])
 }
