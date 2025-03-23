@@ -42,6 +42,7 @@ return [
 
             // Logs every incoming GraphQL query.
             // Nuwave\Lighthouse\Http\Middleware\LogGraphQLQueries::class,
+            // \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
         ],
 
         /*

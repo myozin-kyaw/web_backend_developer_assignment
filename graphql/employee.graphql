@@ -34,10 +34,15 @@ type Employee {
 }
 
 type Mutation {
-    createEmployee(input: CreateEmployeeInput! @spread): Employee! @create
+    createEmployee(input: CreateEmployeeInput! @spread): Employee!
+        @guard(with: ["api"])
+        @create
 
     updateEmployee(id: ID!, input: UpdateEmployeeInput! @spread): Employee!
+        @guard(with: ["api"])
         @update
 
-    deleteEmployee(id: ID! @eq): Employee @delete
+    deleteEmployee(id: ID! @eq): Employee @guard(with: ["api"]) @delete
+
+    exportEmployeesExcel: String @guard(with: ["api"])
 }
