@@ -1,3 +1,7 @@
+"Can be used as an argument to upload files using https://github.com/jaydenseric/graphql-multipart-request-spec"
+scalar Upload
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+
 type Query {
     employees: [Employee!]! @guard(with: ["api"]) @paginate
     employee(id: ID @eq): Employee @guard(with: ["api"]) @find
@@ -46,5 +50,6 @@ type Mutation {
 
     exportEmployeesExcel: String @guard(with: ["api"])
 
-    importEmployeesExcel(file: Upload! @rules(apply: ["mimeTypes:xlsx"]): String! @guard(with: ["auth:api"])
+    importEmployeesExcel(file: Upload! @rules(apply: ["mimes:xlsx"])): String!
+        @guard(with: ["api"])
 }

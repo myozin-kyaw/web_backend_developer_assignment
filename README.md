@@ -154,3 +154,26 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
         exportEmployeesExcel
     }
 ```
+
+### 12. Import Employees Excel
+
+> [Download Sample Employee Excel Import File](https://github.com/myozin-kyaw/web_backend_developer_assignment/tree/main/public/assets/employees-excel.xlsx)
+
+-   In your postman application of form-data
+
+> Employee Excel Import Endpoint
+
+```
+    endpoint: http://web_backend_assignment.test/graphql (or) http://127.0.0.1/graphql
+    method: POST
+```
+
+> Payload
+
+```
+    operations : { "query": "mutation ($file: Upload!) { importEmployeesExcel(file: $file) }", "variables": { "file": null } }
+
+    0 : $file
+
+    map : { "0": ["variables.file"] }
+```
