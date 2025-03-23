@@ -35,10 +35,18 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
     php artisan passport:client --personal
 ```
 
-### 3. Go to the route
+### 3. Go to the GraphQL URL
+
+#### If you're using Herd, then link the project, then go to the below link
 
 ```
     http://web_backend_assignment.test/graphiql
+```
+
+#### Otherwise, serve the project using localhost on your machine
+
+```
+    http://127.0.0.1:8000/graphiql
 ```
 
 ### 4. Then, Login
