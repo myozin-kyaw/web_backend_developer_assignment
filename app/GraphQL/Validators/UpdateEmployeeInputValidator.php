@@ -28,7 +28,6 @@ final class UpdateEmployeeInputValidator extends Validator
             'email' => [
                 'required',
                 'email',
-                'unique:employees,email,' . $this->arg('id') . ',id',
             ],
             'phone' => [
                 'nullable',
@@ -44,8 +43,6 @@ final class UpdateEmployeeInputValidator extends Validator
                 'regex:/^\d{1,8}(\.\d{0,2})?$/'
             ],
         ];
-
-        // request()->validate('unique:employees,email,except,' . $this->arg('id'));
     }
 
     public function messages(): array

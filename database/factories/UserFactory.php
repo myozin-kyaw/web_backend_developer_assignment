@@ -34,6 +34,21 @@ class UserFactory extends Factory
     }
 
     /**
+     * Indicate that the model's has admin user
+     */
+    public function admin(): static
+    {
+        return $this->state(fn(array $attributes) => [
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => static::$password ??= Hash::make('password'),
+            'remember_token' => Str::random(10),
+        ]);
+    }
+
+    /**
      * Indicate that the model's email address should be unverified.
      */
     public function unverified(): static

@@ -1,6 +1,6 @@
 type Query {
-    employees: [Employee!]! @paginate @auth
-    employee(id: ID @eq): Employee @find @auth
+    employees: [Employee!]! @guard(with: ["api"]) @paginate
+    employee(id: ID @eq): Employee @guard(with: ["api"]) @find
 }
 
 input CreateEmployeeInput @validator {
@@ -39,5 +39,5 @@ type Mutation {
     updateEmployee(id: ID!, input: UpdateEmployeeInput! @spread): Employee!
         @update
 
-    deleteEmployee(id: ID! @eq): Employee! @delete
+    deleteEmployee(id: ID! @eq): Employee @delete
 }
