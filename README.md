@@ -51,7 +51,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 4. Then, Login
 
-```json
+```
     mutation {
         login(input: {
             username: "admin",
@@ -62,7 +62,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 5. Get Authenticated User
 
-```json
+```
     {
         me {
             username,
@@ -73,7 +73,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 6. Employee Pagination List
 
-```json
+```
     {
         employees(first: 25) {
             data {
@@ -87,7 +87,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 7. Employee Detail By ID
 
-```json
+```
     {
         employee(id: 1) {
             id,
@@ -100,7 +100,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 8. Create Employee Payload
 
-```json
+```
     mutation {
         createEmployee(input: {
             first_name: "Mg",
@@ -120,7 +120,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 9. Update Employee Payload
 
-```json
+```
     mutation {
         updateEmployee(id: $id, input: {
             first_name: "Mg",
@@ -139,7 +139,7 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 
 ### 10. Delete Employee
 
-```json
+```
     mutation {
         deleteEmployee(id: $id) {
             id
