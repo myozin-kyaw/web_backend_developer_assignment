@@ -146,3 +146,11 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
         }
     }
 ```
+
+### 10. Export Employees Excel
+
+```
+    mutation {
+        exportEmployeesExcel
+    }
+```
