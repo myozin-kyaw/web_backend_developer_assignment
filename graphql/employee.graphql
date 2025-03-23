@@ -1,0 +1,43 @@
+type Query {
+    employees: [Employee!]! @paginate
+    employee(id: ID @eq): Employee @find
+}
+
+input CreateEmployeeInput @validator {
+    first_name: String!
+    last_name: String!
+    email: String!
+    phone: String!
+    address: String!
+    salary: Float!
+}
+
+input UpdateEmployeeInput @validator {
+    first_name: String!
+    last_name: String!
+    email: String!
+    phone: String
+    address: String
+    salary: Float
+}
+
+type Employee {
+    id: ID!
+    first_name: String!
+    last_name: String!
+    email: String!
+    phone: String!
+    address: String!
+    salary: Float!
+    created_at: String!
+    updated_at: String
+}
+
+type Mutation {
+    createEmployee(input: CreateEmployeeInput! @spread): Employee! @create
+
+    updateEmployee(id: ID!, input: UpdateEmployeeInput! @spread): Employee!
+        @update
+
+    deleteEmployee(id: ID! @eq): Employee! @delete
+}
