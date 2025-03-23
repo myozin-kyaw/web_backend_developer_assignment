@@ -16,6 +16,9 @@ final class UpdateEmployeeInputValidator extends Validator
      */
     public function rules(): array
     {
+
+        info(json_encode($this->args->toArray()));
+
         return [
             'first_name' => [
                 'required',
@@ -27,7 +30,7 @@ final class UpdateEmployeeInputValidator extends Validator
             ],
             'email' => [
                 'required',
-                'email',
+                'email'
             ],
             'phone' => [
                 'nullable',

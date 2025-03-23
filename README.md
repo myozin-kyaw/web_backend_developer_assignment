@@ -1,6 +1,6 @@
 # Web Backend Developer Assignment
 
-### Build Wtih
+## Build Wtih
 
 -   Laravel Framework
 -   GraphQL (nuwave/lighthouse)
@@ -8,45 +8,40 @@
 -   Maatwebsite/Laravel-Excel (Import && Export Excel)
 -   Faker (Data Seeding)
 
-### Project Setup
+## Project Setup
 
-1. Git Clone Web Backend Developer Assignment Project
+### 1. Git Clone Web Backend Developer Assignment Project
 
 ```
 git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 ```
 
-2. Composer install
+### 2. Preparing the project fake data, environment setup & depenencies
+
+#### On Linux or Mac Os
 
 ```
-composer install
+./refresh.sh
 ```
 
-3. Composer install
+#### On Window
 
 ```
-cp .env.example .env
-```
-
-3. Generate Environment Key
-
-```
-php artisan key:generate
-```
-
-4. Generate Personal OAuth Token
-
-```
+    rm -rf database/database.sqlite ( Only run to remove the database/database.sqlite when you want the project to restart. )
+    php artisan migrate:refresh --seed
+    composer install
+    cp .env.example .env
+    php artisan key:generate
     php artisan passport:client --personal
 ```
 
-4. Go to the route
+### 3. Go to the route
 
 ```
     http://web_backend_assignment.test/graphiql
 ```
 
-5. Then, Login
+### 4. Then, Login
 
 ```json
     mutation {
@@ -57,7 +52,7 @@ php artisan key:generate
     }
 ```
 
-6. Get Authenticated User
+### 5. Get Authenticated User
 
 ```json
     {
@@ -68,7 +63,7 @@ php artisan key:generate
     }
 ```
 
-7. Employee Pagination List
+### 6. Employee Pagination List
 
 ```json
     {
@@ -82,7 +77,7 @@ php artisan key:generate
     }
 ```
 
-8. Employee Detail By ID
+### 7. Employee Detail By ID
 
 ```json
     {
@@ -95,7 +90,7 @@ php artisan key:generate
     }
 ```
 
-9. Create Employee Payload
+### 8. Create Employee Payload
 
 ```json
     mutation {
@@ -115,7 +110,7 @@ php artisan key:generate
     }
 ```
 
-10. Update Employee Payload
+### 9. Update Employee Payload
 
 ```json
     mutation {
@@ -134,7 +129,7 @@ php artisan key:generate
     }
 ```
 
-11. Delete Employee
+### 10. Delete Employee
 
 ```json
     mutation {
