@@ -27,11 +27,12 @@ git clone git@github.com:myozin-kyaw/web_backend_developer_assignment.git
 #### On Window
 
 ```
-    rm -rf database/database.sqlite ( Only run to remove the database/database.sqlite when you want the project to restart. )
-    php artisan migrate:refresh --seed
     composer install
     cp .env.example .env
     php artisan key:generate
+    rm -rf database/database.sqlite ( Only run to remove the database/database.sqlite when you want the project to restart. )
+    php artisan migrate:refresh --seed
+    php artisan passport:keys
     php artisan passport:client --personal
 ```
 
